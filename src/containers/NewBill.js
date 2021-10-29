@@ -19,7 +19,9 @@ export default class NewBill {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
-    this.firestore
+    const mimeType = ['image/jpeg','image/png']
+    if(mimeType.includes(file.type)){
+      this.firestore
       .storage
       .ref(`justificatifs/${fileName}`)
       .put(file)
@@ -28,6 +30,9 @@ export default class NewBill {
         this.fileUrl = url
         this.fileName = fileName
       })
+    }else{
+      alert("Format de fichier incorrect. Formats acceptés .png / .jpg, .jpeg")
+    }
   }
   handleSubmit = e => {
     e.preventDefault()
