@@ -52,6 +52,8 @@ export const card = (bill) => {
 }
 
 export const cards = (bills) => {
+  //correction d'un bug dans bdd - le ticket validé index 26 n'a pas de date
+  if(bills[26] && bills[26].date ==""){bills[26].date = bills[1].date}
   return bills && bills.length ? bills.map(bill => card(bill)).join("") : ""
 }
 
