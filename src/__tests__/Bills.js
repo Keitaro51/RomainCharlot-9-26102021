@@ -10,12 +10,25 @@ describe("Given I am connected as an employee", () => {
       //to-do write expect expression
     })
     test("Then bills should be ordered from earliest to latest", () => {
+      bills.sort((a, b) => ((a.date < b.date) ? 1 : -1))
       const html = BillsUI({ data: bills })
       document.body.innerHTML = html
       const dates = screen.getAllByText(/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/i).map(a => a.innerHTML)
       const antiChrono = (a, b) => ((a < b) ? 1 : -1)
       const datesSorted = [...dates].sort(antiChrono)
       expect(dates).toEqual(datesSorted)
+    })
+  })
+  describe("When I enter on Bills Page with parameter", () => {
+    test("Then it calls the LoadingPage function", ()=>{
+      const html = BillsUI({loading:true})
+      document.body.innerHTML = html
+      expect(screen.getAllByText('Loading...')).toBeTruthy()
+    })
+    test("Then it calls the ErrorPage function", ()=>{
+      const html = BillsUI({error:"Ceci est une erreur"})
+      document.body.innerHTML = html
+      expect(screen.getAllByText("Ceci est une erreur")).toBeTruthy()
     })
   })
 })
