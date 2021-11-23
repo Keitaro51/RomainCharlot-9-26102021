@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given I am connected as an employee When I am on Bills Page When I click on an eye icon, a modal should open 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  class="modal fade show"
+  id="modaleFile"
+  role="dialog"
+  tabindex="-1"
+>
+  
+      
+  <div
+    class="modal-dialog modal-dialog-centered modal-lg"
+    role="document"
+  >
+    
+        
+    <div
+      class="modal-content"
+    >
+      
+          
+      <div
+        class="modal-header"
+      >
+        
+            
+        <h5
+          class="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Justificatif
+        </h5>
+        
+            
+        <button
+          aria-label="Close"
+          class="close"
+          data-dismiss="modal"
+          type="button"
+        >
+          
+              
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+          
+            
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="modal-body"
+        data-testid="test"
+      >
+        
+          
+      </div>
+      
+        
+    </div>
+    
+      
+  </div>
+  
+    
+</div>
+`;
