@@ -58,7 +58,6 @@ exports[`Given I am connected as an employee When I am on Bills Page When I clic
           
       <div
         class="modal-body"
-        data-testid="test"
       >
         
           

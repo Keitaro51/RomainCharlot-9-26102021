@@ -1,4 +1,7 @@
 export const formatDate = (dateStr) => {
+  //other funny students create bills without date, avoiding dropdown to open - local fix waiting for OC update
+  if(dateStr == ""){dateStr = '2021-12-04'}
+  
   const date = new Date(dateStr)
   const ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(date)
   const mo = new Intl.DateTimeFormat('fr', { month: 'short' }).format(date)
