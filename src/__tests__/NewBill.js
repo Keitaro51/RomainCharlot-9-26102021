@@ -72,10 +72,11 @@ describe("Given I am connected as an employee", () => {
                 fileName: "test.jpg",
                 status: 'pending'
             }
-
+            
             const form = screen.getByTestId('form-new-bill')
             const handleSubmit = jest.fn(()=>NewBill.handleSubmit)
             form.addEventListener('submit', handleSubmit)
+            jest.fn(()=>NewBill.createBill(bill))
             fireEvent.submit(form, { currentTarget: form })
             routerMock('Bills')
             expect(handleSubmit).toHaveBeenCalled()        
